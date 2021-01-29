@@ -14,3 +14,4 @@ httpApp.use(function(req, res, next) {
 httpApp.get("/api/test/all", controller.allAccess);
 
 httpApp.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
+httpApp.get("/api/test/cities", [authJwt.verifyToken], controller.cities);

@@ -9,6 +9,11 @@ const cors = require('cors')
 const router = express.Router();
 const bodyParser = require('body-parser');
 
+const corsOptions = {
+  origin: "http://localhost:3000"
+};
+httpApp.use(cors(corsOptions));
+
 httpApp.use(bodyParser.urlencoded({ extended: true }));
 httpApp.use(bodyParser.json());
 

@@ -1,6 +1,23 @@
 const logger = require("./../../configs/logger").https
 
 const httpApp = require("./../../configs/express").httpApp
+const verifySignUp = require("./../../actions/authentication/verifysignup");
+const controller = require("./../../actions/authentication/auth.controller");
 
-// const createUser = require("./../../actions/database/users/createUser");
-// const authenticateUser = require("./../../actions/database/users/createUser");
+httpApp.use(function(req, res, next) {
+    res.header(
+        "Access-Control-Allow-Headers",
+        "x-access-token, Origin, Content-Type, Accept"
+    );
+    next();
+});
+
+httpApp.post(
+    "/api/auth/signup",
+    [
+        verifySignUp.checkDuplicateUsername
+    ],
+    controller.signup
+);
+
+httpApp.post("/api/auth/signin", controller.signin);

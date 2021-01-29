@@ -31,6 +31,7 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
+    logger.info(req.body)
     User.findOne({
             username: req.body.username
         })
@@ -44,6 +45,7 @@ exports.signin = (req, res) => {
 
             if (!user) {
                 return res.status(404).send({
+                    accessToken: null,
                     message: "User Not found."
                 });
             }

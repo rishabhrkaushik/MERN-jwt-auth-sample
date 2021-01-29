@@ -1,11 +1,23 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "run": "nodemon server.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-winston": "^4.0.5",
+        "jsonwebtoken": "^8.5.1",
+        "moment-timezone": "^0.5.31",
+        "mongoose": "^5.9.25",
+        "string": "^3.3.3",
+        "winston": "^3.3.3"
+    },
+    "author": "Rishabh Kaushik",
+    "license": "ISC"
 }
